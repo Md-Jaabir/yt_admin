@@ -4,22 +4,25 @@ let blogId=location.search.replace("?","").split("&")[0].split("=")[1];
 let video_cont=document.querySelector(".videos");
 let adminName;
 
+
+
 checkLoginandGetData("https://youtubechannelbackend.herokuapp.com/admin/admin_info","GET",ifSuccess,()=>{
-    toast("You aren't signed in");
+    // toast("You aren't signed in");
     location.href="./login.html";
 });
 
 showLoadingScreen()
+
 fetch(`https://youtubechannelbackend.herokuapp.com/user/blog_posts?_id=${blogId}`)
 .then(res=>res.json())
 .then(blogs=>{
   setEverythingInPlace(blogs[0]);
-  hideLoadingScreen();
+  // hideLoadingScreen();
 })
 .catch((err)=>{
   console.log(err);
   toast("Network problem");
-  hideLoadingScreen();
+  // hideLoadingScreen();
 });
 
 function setEverythingInPlace(blog){
@@ -34,7 +37,7 @@ commentForm.addEventListener("submit",(event)=>{
   
 
   checkLoginandGetData("https://youtubechannelbackend.herokuapp.com/admin/admin_info","GET",onSuccess,()=>{
-    toast("You aren't signed in");
+    // toast("You aren't signed in");
     location.href="./login.html";
   });
   

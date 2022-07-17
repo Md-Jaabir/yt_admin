@@ -37,10 +37,8 @@ window.onload=function(){
 
     
   },()=>{
-    toast("You aren't signed in");
-    setTimeout(()=>{
-      location.reload();
-    },400);
+    showLoadingScreen();
+    // toast("You aren't signed in");
     location.href="./login.html";
   })
 }

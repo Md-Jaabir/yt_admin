@@ -1,9 +1,6 @@
 window.onload=()=>{
   checkLoginandGetData("https://youtubechannelbackend.herokuapp.com/admin/contact_msgs","GET",onSuccess,()=>{
     toast("You aren't signed in");
-    setTimeout(()=>{
-      location.reload();
-    },400);
     location.href="./login.html";
   })
 }

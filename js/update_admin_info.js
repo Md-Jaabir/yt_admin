@@ -2,9 +2,6 @@ window.onload=function(){
   checkLoginandGetData('https://youtubechannelbackend.herokuapp.com/admin/admin_info','GET',onSuccess,()=>{
     // hideLoadingScreen();
     toast("You aren't signed in");
-    setTimeout(()=>{
-      location.reload();
-    },400);
     location.href="./login.html";
   })
 }

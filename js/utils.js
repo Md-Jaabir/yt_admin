@@ -72,7 +72,7 @@ function checkLoginandGetData(url,method,success,error){
   }).then(res=>res.json())
   .then(data=>{
     if(data.message=='error'){
-      hideLoadingScreen();
+      // hideLoadingScreen();
       error();
     }else{
       hideLoadingScreen();
